@@ -1,0 +1,1 @@
+document.querySelectorAll("#viewBtn"),document.querySelectorAll("#product-each"),document.querySelectorAll(".product-grid6"),document.querySelectorAll(".layoutBtn"),document.querySelector(".four-col"),document.querySelector(".three-col"),document.querySelector(".two-col");

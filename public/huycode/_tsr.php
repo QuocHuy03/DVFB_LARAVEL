@@ -1,0 +1,21 @@
+<?php
+$cookie = "lang_code=eyJpdiI6IjNtS3ZLYnNTMWNZSlorWHpaU0JSSnc9PSIsInZhbHVlIjoiYnV5dUlJVnYrbDF6ZXhEYUhnT2drQT09IiwibWFjIjoiY2FhNjk5NjU5YzczYzlhMzNkNzIyYmZmOTcwYzE1ZDQyNDUyNjUwMmM5NjVlYzA1NDMyMzA1ZjViZmEzODgyOSJ9; client_info=eyJpdiI6IjZPU2VjT1pmV3pKc1B3UUtWUnVKaXc9PSIsInZhbHVlIjoiNXA0NWhzM2JHRzBtcGlxNjBuWHVOZz09IiwibWFjIjoiNTM2MjhiYzE4MTA4YzUzZWJlMDMyZGI2YjM1MTZkN2MzOTQyMDVhMjllOTkzYWFmMjAyM2UzMjYwMDE0MjY1NiJ9; remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6ImJXakxjTVpmcWtvWVV3OU1GdkMyOGc9PSIsInZhbHVlIjoiQkVrQVVENjJqVkRZUEtxbHVEQkswRVRLM01ESk9nMmJcLzgwQko1dmJ0SEtoY3dIXC91dUNcL2pDdU40VWFuXC9xV3ArTDNUOTRqTldmYW1IeE9vOWZrQ09BVDhXRVV1RWxcL25RUUpWZVpUUTFLdEpJbTl0VWJIYXhmUnY1eFwvb09XMm9aK2pZUzdtcVBGcVBnVStKY25SbjI2aFpCeHlCZ214RzlmR25QWWhtVXJqSzJ2em5MbDhkYjNDQzFGbWxxd2dxIiwibWFjIjoiZWUxYTE0ZWE1NmY4ZDNmMTM3YTg0MGYwOTI4MTQwZDg1YTBjYjk3Njc3ZjgzZjM0Y2FiYzBiM2ZjOTZiNmNiOSJ9; TCK=fa40b44def0a4220e0a8dbd99ffc1d4f; PHPSESSID=ojigps35ll1ob204jcpah1mevj; XSRF-TOKEN=eyJpdiI6InpDYjlkbzRZQUd6d0h2YURCejBBRUE9PSIsInZhbHVlIjoiUGhZNGdGSHNWZ0dBQzUxcHpNelpzaTRNSkxhakFyYTd5S3ZjdUZtY2IrUUxSdU5GRzdkbzdVM1RhRzg0eFF6OSIsIm1hYyI6IjcwZGIwODkyMWQ5NDM0ZjNlZmU0YTE4ZGM2YWViOGYxZDIzZWZiZmMxYmY5ODhjZmY5NTFjNTc1OWY0YWRkZWQifQ==; web_session=eyJpdiI6Im9xU1FRa3NOUkYxd0ZEcVZNSVwvSGdnPT0iLCJ2YWx1ZSI6Ilgxa2hsRGgyeDhmNmUwblMxM24ybWUwQktGeUNIRUtQcktUWjQ0WGZEVjZEVFczZ29ERDFINlBnTjAyZGVXTmIiLCJtYWMiOiJmYTkyMDU3ZmQ0ZDIzZGE3ZDRmYWNjMWRjOGY4MDAxMDRkMmMxOTYxZDJkYjY2NDhlNWU0OWQ2NDIyMmUwZTQ2In0=";
+$url="https://thesieure.com/wallet/transfer";
+$head=array(
+"Host:thesieure.com",
+"referer:https://thesieure.com/",
+"cookie: $cookie"//ck tsr
+);
+$ch=curl_init();
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch,CURLOPT_USERAGENT, "Mozilla/5.0 (Linux; Android 10; SM-J600G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36");
+curl_setopt($ch,CURLOPT_HTTPHEADER, $head);
+
+$mr2 = curl_exec($ch);  
+curl_close($ch); 
+//dữ liệu
+$data=explode("<tbody>", $mr2)[3];
+$data=explode("</tbody>", $data)[0];
+echo $data;
+?>
