@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class MbBankController extends Controller
 {
-    private $user = "0775502724";
-    private $pass = "19102003Huycoder";
+    private $user = "";
+    private $pass = "";
     private $softTokenId_goc = "bfc0c155-00c1-478b-9a4c-ee35e41f52e5";
     private $deviceId_goc = "c58c7339-97c2-ebdb-8400-573696596480";
     private $deviceIdCommon_goc = "c58c7339-97c2-ebdb-8400-573696596480";
